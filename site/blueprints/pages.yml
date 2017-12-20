@@ -1,0 +1,14 @@
+title: Page
+pages: true
+files: true
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea
+  footer:
+    label: Show in footer?
+    type: toggle
+    text: show/hide

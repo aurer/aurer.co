@@ -1,0 +1,28 @@
+title: Page
+pages: true
+files: true
+  fields:
+    alt:
+      label: Alt text
+      type: text
+    author:
+      label: Author
+      type: text
+    copyright:
+      label: Copyright
+      type: text
+    caption:
+      label: Caption
+      type: textarea
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea
+  show_in_footer:
+    label: Show in footer
+    type: toggle
+    text: yes/no
+    default: no

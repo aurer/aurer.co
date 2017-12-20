@@ -1,0 +1,34 @@
+title: Site
+
+pages: default
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  author:
+    label: Author
+    type:  text
+
+  description:
+    label: Description
+    type:  textarea
+
+  copyright:
+    label: Copyright
+    type:  textarea
+
+  networks:
+    label: Networks
+    type: structure
+    fields:
+      title:
+        label: Title
+        type: text
+      url:
+        label: URL
+        type: text
+      icon:
+        label: Icon
+        type: image
