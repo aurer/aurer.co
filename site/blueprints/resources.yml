@@ -1,0 +1,13 @@
+title: Resources
+files: false
+pages:
+  template: resource
+options:
+  preview: true
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  textarea
