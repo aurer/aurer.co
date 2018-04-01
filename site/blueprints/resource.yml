@@ -18,3 +18,5 @@ fields:
   tags:
     label: Tags
     type: tags
+    lower: true
+    index: siblings
