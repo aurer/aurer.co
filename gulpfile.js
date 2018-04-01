@@ -1,72 +1,22 @@
-var server = require('browser-sync');
-var gulp = require('gulp');
-var less = require('gulp-less');
-var plumber = require('gulp-plumber');
-var del = require('del');
-var run = require('run-sequence');
-var debug = require('gulp-debug');
-var typescript = require('gulp-typescript');
-var LessCleanCSS = require('less-plugin-clean-css');
-var cleanCSS = new LessCleanCSS({advanced: true})
-var LessAutoprefix = require('less-plugin-autoprefix');
-var autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
-var imagemin = require('gulp-imagemin');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sync = require('browser-sync');
 
-var src = './assets-src';
-var dest = './assets';
-var proxy = 'aurer.test';
-
-// Compile less
-gulp.task('less', function() {
-	return gulp.src([`${src}/less/screen.less`, `${src}/less/print.less`])
-		.pipe(plumber())
-		.pipe(less({
-			plugins: [autoprefix, cleanCSS]
-		}))
-		.pipe(gulp.dest(`${dest}/css`))
-		.pipe(server.stream());
-});
-
-// Compile JS
-gulp.task('js', function() {
-	return gulp.src([`${src}/js/*.ts`])
-		.pipe(plumber())
-		.pipe(typescript({
-    	outFile: 'main.js'
-		}))
-		.pipe(gulp.dest(`${dest}/js`))
-		.pipe(server.stream());
-});
-
-// Compress images
-gulp.task('imagemin', function() {
-	return gulp.src([`${src}/images/*`])
-		.pipe(imagemin())
-		.pipe(gulp.dest(`${dest}/images`))
+gulp.task('sass', () => {
+	return gulp.src('src/scss/main.scss')
+		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		.pipe(gulp.dest('assets/css'))
+		.pipe(sync.stream());
 })
 
-// Watch for changes
-gulp.task('watch', function() {
-	gulp.watch(`${src}/less/**/*.less`, ['less']);
-	gulp.watch(`${src}/js/**/*.ts`, ['js']);
-	gulp.watch(`${src}/images/*`, ['imagemin']);
-	gulp.watch('./site/**/*').on('change', server.reload);
-});
+gulp.task('serve', () => {
+	sync.init({
+    proxy: "http://aurer.test"
+  });
 
-// Setup local server with injection
-gulp.task('serve', function() {
-	server.init({
-		proxy: proxy
-	});
-});
+	gulp.watch('src/scss/main.scss', ['sass'])
+})
 
-// Clean the build folder
-gulp.task('clean', function() {
-	return del(`${dest}/*`);
-});
+gulp.task('default', ['sass']);
 
-gulp.task('default', function() {
-	run('clean', 'less', 'js', 'imagemin');
-});
-
-gulp.task('dev', ['default', 'watch', 'serve']);
+gulp.task('dev', ['default', 'serve']);
