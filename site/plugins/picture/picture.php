@@ -12,15 +12,33 @@
 
 function picture($image) {
 	$webp = webp($image);
-	?><picture title="<?= method_exists($image, 'alt') ? $image->alt() : $image->filename() ?>">
+	$aspect_ratio = getAspectRatio($image);
+	$style = 'display:block;position:relative;padding-top:' . $aspect_ratio . '%';
+
+	?><picture style="<?=$style?>"  title="<?= method_exists($image, 'alt') ? $image->alt() : $image->filename() ?>">
 		<?php if ($webp): ?><source srcset="<?= $webp ?>" type="image/webp" /><?php endif ?>
 		<source srcset="<?= $image->url() ?>" type="image/<?= $image->type() ?>" />
-	  <img src="<?= $image->url() ?>" alt="<?= method_exists($image, 'alt') ? $image->alt() : '' ?>" width="<?= $image->width() ?>" height="<?= $image->height() ?>" />
+	  <img style="position:absolute;top:0;left:0;width:100%" src="<?= $image->url() ?>" alt="<?= method_exists($image, 'alt') ? $image->alt() : '' ?>" width="<?= $image->width() ?>" height="<?= $image->height() ?>" />
 	</picture><?php
 }
 
+function getAspectRatio($image) {
+	return ($image->height() / $image->width()) * 100;
+}
+
 function figure($image) {
-	?><figure><?php snippet('imageset', ['image' => $image]) ?>
+	$width = $image->width();
+	$root = $image->root();
+	$svg_path = str_replace('.' . $image->extension(), '.svg', $root);
+	$background = "";
+	$max_width = $image->width() . 'px';
+	if (file_exists($svg_path)) {
+		$svg = file_get_contents($svg_path);
+		$base64 = base64_encode($svg);
+		$background = "max-width:$max_width;background-size:cover;background-image: url(data:image/svg+xml;base64,$base64)";
+	}
+	?><figure style="<?=$background?>;">
+		<?php picture($image) ?>
 		<?php if ( method_exists($image, 'caption') ): ?>
 			<figcaption><?= $image->caption() ?></figcaption>
 		<?php endif ?>
@@ -35,7 +53,6 @@ function webp($image) {
 		return $webp_url;
 	}
 
-	error_log(('Generate webp'));
 	switch ($image->extension()) {
 		case 'jpg':
 		case 'jpeg':
@@ -49,7 +66,7 @@ function webp($image) {
 			break;
 	}
 
-	if (imagewebp($source, $webp_path)) {
+	if (isset($source) && imagewebp($source, $webp_path)) {
 		return $webp_url;
 	}
 
