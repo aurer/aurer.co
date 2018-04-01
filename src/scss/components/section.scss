@@ -2,8 +2,8 @@
   clear: both;
 
   &-inner {
-    padding: @space;
-    max-width: @mq-xl-width;
+    padding: $space;
+    max-width: width(xl);
     margin: 0 auto;
 
     &:before,
@@ -15,8 +15,8 @@
   }
 
   &--tall &-inner {
-    padding-top: @space-lg;
-    padding-bottom: @space-lg;
+    padding-top: $space-lg;
+    padding-bottom: $space-lg;
   }
 
   &--fullwidth &-inner {

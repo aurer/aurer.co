@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5, h6, hgroup
 blockquote, p, address,
 table, fieldset, figure, pre {
   margin-top: 0;
-  margin-bottom: @space;
+  margin-bottom: $space;
 }
 
 // Address styling not present in IE 8/9/10/11, Safari, and Chrome.
@@ -81,14 +81,28 @@ hr {
   box-sizing: content-box;
   height: 0;
   border: none;
-  border-top: 1px inset @color-neutral;
+  border-top: 1px inset $color-neutral;
 }
 
-// Contain overflow in all browsers.
+code {
+  border: 1px solid $color-neutral-light;
+  background-color: $color-neutral-lighter;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  overflow: auto;
+}
+
 pre {
   overflow: auto;
   tab-size: 2;
+  border-radius: 4px;
+
+  code {
+    display: block;
+    padding: $space-sm;
+  }
 }
+
 
 // Address odd `em`-unit font size rendering in all browsers.
 code,
@@ -96,5 +110,5 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: .9em;
 }

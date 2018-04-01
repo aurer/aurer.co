@@ -54,25 +54,30 @@ input::-moz-focus-inner {
 }
 
 
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=image]),
+input[type='text'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+input[type='time'],
+input[type='number'],
 textarea,
 select {
-  height: @space-md;
-  padding: @space-xs @space-sm;
-  border: 1px solid @color-neutral-light;
+  height: $space-md;
+  padding: $space-xs $space-sm;
+  border: 1px solid $color-neutral-light;
   box-shadow: none;
-  box-sizing: border-box;
-  background-color: @color-white;
-  color: @color-neutral-darker;
+  background-color: $color-white;
+  color: $color-neutral-darker;
   line-height: normal;
   vertical-align: middle;
-}
 
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=image]),
-textarea {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  &:focus {
+    border: 1px solid $color-primary;
+    outline: 0;
+  }
 }
 
 textarea {
@@ -80,13 +85,6 @@ textarea {
   padding-top: 6px;
   padding-bottom: 6px;
   overflow: auto;
-}
-
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=image]):focus,
-textarea:focus,
-select:focus {
-  border: 1px solid @color-primary;
-  outline: 0;
 }
 
 label,

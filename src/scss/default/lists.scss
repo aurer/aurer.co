@@ -1,10 +1,10 @@
 ul, ol, dl {
   margin-top: 0;
-  margin-bottom: @space;
+  margin-bottom: $space;
 }
 
 ul, ol {
-  padding-left: @space;
+  padding-left: $space;
 
   ul, ol {
     margin-bottom: 0;
@@ -26,5 +26,5 @@ dt {
 }
 
 dd {
-  margin-left: @space;
+  margin-left: $space;
 }
