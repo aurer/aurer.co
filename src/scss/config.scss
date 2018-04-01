@@ -2,9 +2,8 @@
 $base-font-size: 1rem;
 
 // Font families
-$font-primary: sans-serif;
+$font-primary: "Montserrat", sans-serif;
 $font-secondary: sans-serif;
-$font-tertiary: sans-serif;
 
 // Breakpoints
 $widths: (
@@ -28,11 +27,11 @@ $grid-font-size: 1rem;
 $grid-space: 1rem;
 
 // Primary colors
-$color-primary: #02A9CC;
-$color-primary-lighter: lighten($color-primary, 50%);
-$color-primary-light: lighten($color-primary, 30%);
-$color-primary-dark: darken($color-primary, 15%);
-$color-primary-darker: darken($color-primary, 25%);
+$color-primary: #006FFF;
+$color-primary-lighter: #46B9FF;
+$color-primary-light: #0095FF;
+$color-primary-dark: #0F5EC1;
+$color-primary-darker: #1844A6;
 
 // Secondary colors
 $color-secondary: #01C4B3;
@@ -42,13 +41,13 @@ $color-secondary-dark: darken($color-secondary, 15%);
 $color-secondary-darker: darken($color-secondary, 25%);
 
 // Neutral colors
-$color-neutral: mix($color-primary, #aaa, 10%);
-$color-white: lighten($color-neutral, 65%);
-$color-neutral-lighter: lighten($color-neutral, 30%);
-$color-neutral-light: lighten($color-neutral, 20%);
-$color-neutral-dark: darken($color-neutral, 15%);
-$color-neutral-darker: darken($color-neutral, 40%);
-$color-black: darken($color-neutral, 50%);
+$color-neutral: #3F4347;
+$color-white: #f7f7f7;
+$color-neutral-lighter: #606870;
+$color-neutral-light: #53595E;
+$color-neutral-dark: #2D2F31;
+$color-neutral-darker: #212224;
+$color-black: #0E0F0F;
 
 // Message colors
 $color-message-info: #00a8f7;

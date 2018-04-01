@@ -1,0 +1,117 @@
+.Nav {
+	.Nav-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.Nav-open,
+.Nav-close {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	text-indent: -999em;
+	overflow: hidden;
+	position: absolute;
+	top: $space-sm;
+	right: $space-sm;
+	background-image: url(/assets/images/nav-icon.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	touch-action: none;
+
+	@include bp(md) {
+		display: none;
+	}
+}
+
+.Nav-open {
+	background-color: $color-primary;
+	color: $color-white;
+	z-index: 0;
+	transition-property: background, transform;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(.7, 0, .2, 1);
+
+	&.is-dynamic {
+		z-index: 11;
+	}
+
+	&.is-active {
+		transform: rotate(-45deg);
+	}
+}
+
+.Nav-close {
+	position: absolute;
+	background-color: transparent;
+	color: $color-white;
+	transform: rotate(45deg);
+}
+
+.Nav--primary {
+	overflow: hidden;
+	position: absolute;
+	transform: translate3d(0, -100%, 0);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .5s cubic-bezier(.7, 0, .2, 1);
+	background: $color-primary;
+	z-index: 10;
+
+	&.is-active,
+	&:target {
+		transform: translate3d(0, 0, 0);
+	}
+
+	.Nav-list {
+		height: 100%;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: $space;
+
+		a {
+			display: block;
+			color: inherit;
+			margin: auto;
+			padding: $space-sm;
+			font-size: 1.3em;
+			font-weight: 300;
+		}
+	}
+
+	@include bp(md) {
+		position: static;
+		transform: none;
+		background-color: transparent;
+
+		.Nav-list {
+			display: block;
+			margin-left: auto;
+			text-align: right;
+			padding: 0;
+
+			.Nav-item {
+				display: inline-block;
+			}
+
+			a {
+				font-size: 1em;
+				font-weight: normal;
+				padding: 0;
+				padding-left: $space;
+
+				&:focus,
+				&.is-active {
+					color: $color-primary-lighter;
+				}
+			}
+		}
+	}
+}

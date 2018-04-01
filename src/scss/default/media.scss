@@ -10,9 +10,8 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-// Address margin not present in IE 8/9 and Safari.
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 // Correct `inline-block` display not defined in IE 8/9.

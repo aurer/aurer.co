@@ -28,3 +28,14 @@
   	padding: 0;
   }
 }
+
+.Section--mast {
+  .Section-inner {
+    display: grid;
+    grid-template-columns: 8rem auto;
+
+    &:before, &:after {
+      content: none;
+    }
+  }
+}
