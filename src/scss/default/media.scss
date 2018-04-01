@@ -3,7 +3,6 @@ img {
   border: 0;
   max-width: 100%;
   height: auto;
-  transition: opacity .4s;
 }
 
 // Correct overflow not hidden in IE 9/10/11.
@@ -14,21 +13,6 @@ svg:not(:root) {
 // Address margin not present in IE 8/9 and Safari.
 figure {
   margin: 1em 40px;
-
-  img {
-    display: block;
-  }
-
-  // picture {
-  //   display: block;
-
-  //   img {
-  //     position: absolute;
-  //     left: 0;
-  //     top: 0;
-  //     width: 100%;
-  //   }
-  // }
 }
 
 // Correct `inline-block` display not defined in IE 8/9.

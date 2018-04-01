@@ -49,15 +49,24 @@
 	  }
 	}
 
-	// Radios
+	select {
+		width: 100%;
+	}
+
 	input[type='checkbox'],
 	input[type='radio'] {
 		margin-right: $space-xs;
 		vertical-align: middle;
 		outline: none;
 	}
+
+	label {
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
 }
 
+// Inline forms
 .Form--inline {
 	.Form-field {
 		@include bp(md) {
