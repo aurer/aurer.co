@@ -1,7 +1,8 @@
 .Page {
 	.Page-logo {
 		display: inline-block;
-		
+		z-index: 11;
+
 		img {
 			display: block;
 		}

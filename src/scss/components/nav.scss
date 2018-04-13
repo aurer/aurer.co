@@ -9,14 +9,14 @@
 .Nav-open,
 .Nav-close {
 	display: inline-block;
-	width: 40px;
-	height: 40px;
+	width: 34px;
+	height: 34px;
 	border-radius: 20px;
 	text-indent: -999em;
 	overflow: hidden;
 	position: absolute;
-	top: $space-sm;
-	right: $space-sm;
+	top: $space - 0.2;
+	right: $space;
 	background-image: url(/assets/images/nav-icon.svg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -28,10 +28,11 @@
 }
 
 .Nav-open {
-	background-color: $color-primary;
+	background-color: transparent;
+	border: 1px solid;
 	color: $color-white;
 	z-index: 0;
-	transition-property: background, transform;
+	transition-property: background, transform, border-color;
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(.7, 0, .2, 1);
 
@@ -41,12 +42,14 @@
 
 	&.is-active {
 		transform: rotate(-45deg);
+		border-color: transparent;
 	}
 }
 
 .Nav-close {
 	position: absolute;
 	background-color: transparent;
+	border-color: transparent;
 	color: $color-white;
 	transform: rotate(45deg);
 }
@@ -54,23 +57,19 @@
 .Nav--primary {
 	overflow: hidden;
 	position: absolute;
-	transform: translate3d(0, -100%, 0);
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: all .5s cubic-bezier(.7, 0, .2, 1);
-	background: $color-primary;
+	background: $color-black;
 	z-index: 10;
-
-	&.is-active,
-	&:target {
-		transform: translate3d(0, 0, 0);
-	}
+	overflow: hidden;
+	transform: translateY(-100%);
+	transition: all .5s cubic-bezier(.7, 0, .2, 1);
+	transition-delay: .2s;
 
 	.Nav-list {
 		height: 100%;
-		text-align: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -80,13 +79,59 @@
 			display: block;
 			color: inherit;
 			margin: auto;
-			padding: $space-sm;
-			font-size: 1.3em;
-			font-weight: 300;
+			padding: $space-sm 0;
+			font-size: 1.5em;
+			transform: translateY(-100%);
+			opacity: 0;
+			transition: all .3s cubic-bezier(.7, 0, .2, 1);
+
+			&:hover,
+			&:focus {
+				color: $color-white;
+			}
+		}
+
+		.Nav-item:nth-child(2) a {
+			transition-duration: .4s;
+		}
+
+		.Nav-item:nth-child(3) a {
+			transition-duration: .5s;
+		}
+
+		.Nav-item:nth-child(4) a {
+			transition-duration: .6s;
+		}
+	}
+
+	&.is-active,
+	&:target {
+		transform: translateY(0);
+		transition-delay: 0s;
+
+		.Nav-list {
+			a {
+				transition: all .8s cubic-bezier(.7, 0, .2, 1);
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.Nav-item:nth-child(2) a {
+			transition-duration: .9s;
+		}
+
+		.Nav-item:nth-child(3) a {
+			transition-duration: 1s;
+		}
+
+		.Nav-item:nth-child(4) a {
+			transition-duration: 1.1s;
 		}
 	}
 
 	@include bp(md) {
+		background-image: none;
 		position: static;
 		transform: none;
 		background-color: transparent;
