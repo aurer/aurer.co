@@ -89,6 +89,11 @@
 			&:focus {
 				color: $color-white;
 			}
+
+			@include bp(md) {
+				opacity: 1;
+				transform: none;
+			}
 		}
 
 		.Nav-item:nth-child(2) a {
@@ -131,7 +136,6 @@
 	}
 
 	@include bp(md) {
-		background-image: none;
 		position: static;
 		transform: none;
 		background-color: transparent;
