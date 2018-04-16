@@ -1,7 +1,13 @@
 @extends('layouts/default')
 
+@section('h1')
+	<h1>Professional<br> <b>Web Development</b> Suffolk, England</h1>
+@endsection
+
 @section('primary')
-	{!! $page->text()->kirbytext() !!}
+	<div class="Page-caption">
+		{!! $page->text()->kirbytext() !!}
+	</div>
 
 	<h2>Get in touch</h2>
 	<ul class="Social">

@@ -6,7 +6,7 @@
 		@foreach($page->children()->visible() as $work)
 			<div class="Item">
 				<a href="{{ $work->url() }}" class="Social-link">
-					<p>{{ $work->title() }}</p>
+					<h2>{{ $work->title() }}</h2>
 					{{ picture($work->image($work->cover())->thumb(['width' => 500])) }}
 				</a>
 			</div>

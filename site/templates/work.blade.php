@@ -9,7 +9,7 @@
 		@endforeach
 	</div>
 	<script>
-		document.querySelectorAll('img').forEach(img => {
+		document.querySelectorAll('figure img').forEach(img => {
 			img.style.opacity = 0;
 			img.addEventListener('load', function(){
 				img.style.opacity = 1;
