@@ -8,3 +8,34 @@
 		}
 	}
 }
+
+.Page--breadcrumbs {
+	display: block;
+	margin: 0 0 $space;
+	text-align: center;
+
+	a {
+		color: $color-white;
+		opacity: .6;
+	}
+}
+
+.Page--home {
+	.Section--mast {
+		background-color: $color-primary;
+		background-image: linear-gradient($color-primary, $color-primary-dark);
+		height: 100vh;
+		max-height: 35rem;
+
+		.Page-title {
+			height: 100%;
+			max-height: none;
+		}
+	}
+
+	.Nav--primary {
+		a.is-active {
+			color: $color-white;
+		}
+	}
+}
