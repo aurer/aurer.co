@@ -21,7 +21,8 @@ gulp.task('ts', () => {
 
 gulp.task('serve', () => {
 	sync.init({
-    proxy: "http://aurer.test"
+    proxy: "http://aurer.test",
+		notify: false
   });
 
 	gulp.watch('src/scss/**/*.scss', ['sass']);
