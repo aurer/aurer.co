@@ -1,5 +1,4 @@
 .DS_Store
-yarn.lock
 /site/accounts
 /site/config/*
 !/site/config/config.php
