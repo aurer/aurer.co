@@ -7,10 +7,10 @@ $font-secondary: sans-serif;
 
 // Breakpoints
 $widths: (
-	sm: 20em,
-	md: 36em,
-	lg: 52em,
-	xl: 68em
+	sm: 20rem,
+	md: 36rem,
+	lg: 52rem,
+	xl: 68rem
 );
 
 // Spacing
@@ -23,7 +23,6 @@ $space-xl: $space * 3;
 
 // Grid
 $grid-columns: 8;
-$grid-font-size: 1rem;
 $grid-space: 1rem;
 
 // Primary colors
