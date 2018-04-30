@@ -175,8 +175,11 @@
 
 .Nav--footer {
 	.Nav-item {
+		margin-bottom: $space-sm;
+
 		@include bp(md) {
 			display: inline-block;
+			margin-bottom: 0;
 			margin-right: $space-sm;
 		}
 	}
