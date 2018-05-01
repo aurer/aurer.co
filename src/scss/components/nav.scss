@@ -52,6 +52,7 @@
 	border-color: transparent;
 	color: $color-white;
 	transform: rotate(45deg);
+	display: none;
 }
 
 .Nav--primary {
@@ -116,6 +117,10 @@
 		transform: translateY(0);
 		transition-delay: 0s;
 
+		.Nav-close {
+			display: block;
+		}
+
 		.Nav-list {
 			a {
 				transition: all .8s cubic-bezier(.7, 0, .2, 1);
@@ -139,6 +144,7 @@
 
 	@include bp(md) {
 		position: static;
+		transition: none;
 		transform: none;
 		background-color: transparent;
 		background-image: none;
@@ -151,6 +157,7 @@
 
 			.Nav-item {
 				display: inline-block;
+				transition: none;
 			}
 
 			a {
