@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sync = require('browser-sync');
-const ts = require('gulp-typescript');
 
 gulp.task('sass', () => {
 	return gulp.src('src/scss/main.scss')
@@ -10,11 +9,8 @@ gulp.task('sass', () => {
 		.pipe(sync.stream());
 })
 
-gulp.task('ts', () => {
-	return gulp.src(['src/ts/main.ts'])
-		.pipe(ts({
-			noImplicitAny: true
-		}))
+gulp.task('js', () => {
+	return gulp.src(['src/js/main.js'])
 		.pipe(gulp.dest('assets/js'))
 		.pipe(sync.stream());
 })
@@ -26,10 +22,9 @@ gulp.task('serve', () => {
   });
 
 	gulp.watch('src/scss/**/*.scss', ['sass']);
-	gulp.watch('src/ts/*.ts', ['ts']);
+	gulp.watch('src/js/*.js', ['js']);
 	gulp.watch(['site/**/*.php']).on('change', sync.reload);
 })
 
-gulp.task('default', ['sass', 'ts']);
-
+gulp.task('default', ['sass', 'js']);
 gulp.task('dev', ['default', 'serve']);
