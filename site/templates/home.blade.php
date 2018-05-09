@@ -1,7 +1,7 @@
 @extends('layouts/default')
 
 @section('h1')
-	<h1>Professional<br> <b>Web Development</b> Suffolk, England</h1>
+	<h1>Professional <b>Web Development</b> Suffolk, England</h1>
 @endsection
 
 @section('primary')
