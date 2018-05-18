@@ -2,16 +2,16 @@
 
 @section('primary')
 	{!! $page->text()->kirbytext() !!}
-	<nav class="Items Items--resource">
+	<section class="Items Items--resources">
 		@foreach($resources as $resource)
-			<div class="Item">
+			<article class="Item">
 				<h2><a href="{{ $resource->url() }}" class="Social-link">{{ $resource->title() }}</a></h2>
-				<div class="Item-tags">
+				<footer class="Item-tags">
 					@foreach($resource->tags()->split(',') as $tag)
 						<a href="{{ url('resources/' . url::paramsToString(['tag' => $tag]))}}">{{ $tag }}</a>
 					@endforeach
-				</div>
-			</div>
+				</footer>
+			</article>
 		@endforeach
-	</nav>
+	</section>
 @endsection

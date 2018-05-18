@@ -2,11 +2,11 @@
 
 @section('primary')
 	{!! $page->text()->kirbytext() !!}
-	<nav class="Items Items--work">
+	<section class="Items Items--projects">
 		@foreach($page->children()->visible() as $project)
-			<div class="Item">
+			<article class="Item">
 				<h2><a href="{{ $project->url() }}" class="">{{ $project->title() }}</a></h2>
-			</div>
+			</article>
 		@endforeach
-	</nav>
+	</section>
 @endsection

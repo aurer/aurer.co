@@ -2,14 +2,21 @@
 
 @section('primary')
 	{!! $page->text()->kirbytext() !!}
-	<nav class="Items Items--work">
-		@foreach($page->children()->visible() as $work)
-			<div class="Item">
-				<a href="{{ $work->url() }}" class="Social-link">
-					<h2>{{ $work->title() }}</h2>
-					{{ picture($work->image($work->cover())->thumb(['width' => 500])) }}
+	<section class="Items Items--work">
+		@foreach($page->children()->visible() as $item)
+			<article class="Item">
+				<div class="Item-info">
+					<h2 class="Item-title"><a href="{{ $item->url() }}">{{ $item->title() }}</a></h2>
+					<ul>
+						@foreach($item->features()->toStructure() as $feature)
+							<li>{{ $feature }}</li>
+						@endforeach
+					</ul>
+				</div>
+				<a href="{{ $item->url() }}" class="Item-image">
+					{{ picture($item->image($item->cover())->thumb(['width' => 500])) }}
 				</a>
-			</div>
+			</article>
 		@endforeach
-	</nav>
+	</section>
 @endsection

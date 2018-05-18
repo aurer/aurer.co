@@ -1,10 +1,12 @@
 @extends('layouts/default')
 
 @section('primary')
+	{{ image($page->hero()) }}
+
 	{!! $page->text()->kirbytext() !!}
 
 	<div class="">
-		@foreach($contentImages as $image)
+		@foreach($page->gallery() as $image)
 			{{ figure($image) }}
 		@endforeach
 	</div>

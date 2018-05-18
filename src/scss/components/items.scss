@@ -1,0 +1,61 @@
+.Items--work {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: $space;
+}
+
+.Items--projects,
+.Items--resources {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: $space;
+
+	.Item a {
+		display: inline-block;
+		padding: $space;
+	}
+}
+
+.Items--work,
+.Items--projects,
+.Items--resources {
+	.Item {
+		background-color: $color-white;
+		box-shadow: 0 0 100px rgba($color-primary-darker, .15);
+		border-radius: 3px;
+		text-align: center;
+		overflow: hidden;
+	}
+}
+
+.Items--work {
+	.Item {
+		position: relative;
+
+		&:hover .Item-info {
+			opacity: 1;
+		}
+	}
+
+	.Item-info {
+		padding: $space;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(#fff, .9);
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+	ul {
+		list-style-type: none;
+		text-align: left;
+	}
+
+	img {
+		display: block;
+	}
+}

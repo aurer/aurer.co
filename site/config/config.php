@@ -49,3 +49,12 @@ function create_webp($file) {
 
 	return imagewebp($source, $webp_path);
 }
+
+c::set('routes', [
+	[
+		'pattern' => 'robots.txt',
+		'action' => function() {
+			echo 'HELLO';
+		}
+	]
+]);

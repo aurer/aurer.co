@@ -1,10 +1,11 @@
 .Page {
-	background-color: $color-neutral-darker;
+	background-color: $color-black;
 	color: $color-white;
 
 	.Page-logo {
 		display: inline-block;
 		z-index: 11;
+		width: 100px;
 
 		img {
 			display: block;
@@ -24,6 +25,14 @@
 }
 
 .Page--home {
+	h1 {
+		font-weight: 300;
+
+		b {
+			display: block;
+		}
+	}
+
 	.Section--mast {
 		height: 100vh;
 		max-height: 35rem;
@@ -38,5 +47,15 @@
 		a.is-active {
 			color: $color-white;
 		}
+	}
+}
+
+.Page--work,
+.Page--projects,
+.Page--resources {
+	.Section--primary .Section-inner {
+		background-color: transparent;
+		padding: 0;
+		box-shadow: none;
 	}
 }

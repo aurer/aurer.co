@@ -67,7 +67,8 @@
 	z-index: 10;
 	overflow: hidden;
 	transform-origin: bottom left;
-	transform: translateY(-100%) skewY(-20deg);
+	top: -100%;
+	transform: translateY(0) skewY(-20deg);
 	transition: all .5s cubic-bezier(.7, 0, .2, 1);
 	transition-delay: .2s;
 
@@ -114,7 +115,7 @@
 
 	&.is-active,
 	&:target {
-		transform: translateY(0);
+		transform: translateY(100%) skewY(0);
 		transition-delay: 0s;
 
 		.Nav-close {
@@ -166,9 +167,12 @@
 				padding: 0;
 				padding-left: $space;
 				position: relative;
+				opacity: .8;
 
 				&:focus,
 				&.is-active {
+					opacity: 1;
+
 					&:after {
 						content: '';
 						display: block;
