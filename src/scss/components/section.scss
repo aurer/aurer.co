@@ -30,9 +30,6 @@
 }
 
 .Section--mast {
-  background-color: $color-primary;
-  background-image: linear-gradient($color-primary, $color-primary-dark);
-
   .Section-inner {
     display: grid;
     grid-template-columns: 8rem auto;
@@ -71,25 +68,24 @@
   z-index: 2;
   padding: 0 $space-xs;
 
+  @include bp(md) {
+    padding: 0 $space;
+  }
+
   .Section-inner {
-    background-color: rgba($color-white, .95);
-    color: $color-neutral-darker;
-    box-shadow: 0 2px 20px rgba($color-black, .3);
     margin-top: -4vh;
-    padding: 4%;
-    border-radius: 3px;
   }
 
   h2, h3, h4, h5, h6 {
-    color: $color-primary;
+    color: $color-primary-light;
   }
 
   a {
-    color: $color-primary;
+    color: $color-primary-lighter;
 
     &:hover,
     &:focus {
-      color: $color-black;
+      color: $color-white;
     }
   }
 }
