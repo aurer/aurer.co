@@ -1,6 +1,0 @@
-.DS_Store
-/site/accounts
-/site/config/*
-!/site/config/config.php
-/assets/avatars
-node_modules
