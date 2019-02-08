@@ -1,0 +1,47 @@
+title: Work
+pages: false
+files: true
+  fields:
+    alt:
+      label: Alt
+      type: text
+    caption:
+      label: Caption
+      type: text
+fields:
+  title:
+    label: Title
+    type:  text
+  cover:
+    label: Cover image
+    type: files
+  hero:
+    label: Hero image
+    type: files
+  text:
+    label: Text
+    type:  textarea
+  links:
+    label: Links
+    type: structure
+    fields:
+      text:
+        label: Text
+        type: text
+      link:
+        label: URL
+        type: url
+  features:
+    label: Features
+    type: structure
+    fields:
+      text:
+        label: Text
+        type: text
+  technologies:
+    label: Technologies
+    type: structure
+    fields:
+      text:
+        label: Text
+        type: text

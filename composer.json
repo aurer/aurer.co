@@ -1,0 +1,16 @@
+{
+    "name": "aurer/aurer.co",
+    "description": "The aurer.co website",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [],
+    "homepage": "https://aurer.co",
+    "require": {
+        "php": ">=7.1.0",
+        "getkirby/cms": "^3.0",
+        "beebmx/kirby-blade": "^1.0"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

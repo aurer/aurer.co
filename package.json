@@ -1,0 +1,23 @@
+{
+  "name": "Aurer",
+  "version": "4.0.0",
+  "main": "index.php",
+  "repository": "",
+  "author": "Phil Maurer",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "npx gulp start",
+    "build": "npx gulp"
+  },
+  "dependencies": {
+    "gulp": "^4.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "sass-loader": "7.*"
+  }
+}
