@@ -1,30 +1,64 @@
 .Section {
-  clear: both;
+	clear: both;
 
-  &-inner {
-    padding: $space;
-    max-width: width(xl);
-    margin: 0 auto;
+	&-inner {
+		padding: $space;
+		max-width: width(xl);
+		margin: 0 auto;
+	}
 
-    &:before,
-	  &:after {
-	    display: table;
-	    content: '';
-	    clear: both;
-	  }
-  }
+	&--cleared {
+		&:before,
+		&:after {
+			display: table;
+			content: '';
+			clear: both;
+		}
+	}
+}
 
-  &--tall &-inner {
-    padding-top: $space-lg;
-    padding-bottom: $space-lg;
-  }
+.Section--header {
+	.Section-inner {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+	}
+}
 
-  &--fullwidth &-inner {
-  	padding-left: 0;
-  	padding-right: 0;
-  }
+.Section--h1 {
+	.Section-inner {
+		padding-top: $space * 4;
+	}
+}
 
-  &--nopad &-inner {
-  	padding: 0;
-  }
+.Section--main {
+	border-top: 1px solid $color-neutral-lighter;
+	border-bottom: 1px solid $color-neutral-lighter;
+	background-color: $color-white;
+	color: $color-neutral;
+}
+
+.Section--projects {
+	margin-bottom: $space-xl;
+
+	.Section-inner {
+		max-width: none;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+}
+
+.Section--resources {
+	.Section-inner {
+		max-width: none;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+}
+
+.Section--footer {
+	.Section-inner {
+		display: flex;
+		justify-content: space-between;
+	}
 }

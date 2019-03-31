@@ -1,12 +1,14 @@
-@extends('layout/default')
+@extends('layouts/home')
 
 @section('main')
-	@kt( $page->text()->kirbytext() )
-	<div class="Items Items--work">
-		@foreach (page('work')->children()->visible()->limit(4) as $item)
-			<div class="Item">
-				<h2><a href="{{ $item->url() }}">{{ $item->title() }}</a></h2>
-		</div>		
-		@endforeach
-	</div>
+	@component('components/section', ['name' => 'resources'])
+		<div class="Items Items--resources">
+			@foreach (page('resources')->children()->visible()->limit(3) as $item)
+				<div class="Item">
+					<h3><a href="{{ $item->url() }}">{{ $item->title() }}</a></h3>
+					<p class="Item-description">{{ $item->summary() }}</p>
+			</div>		
+			@endforeach
+		</div>
+	@endcomponent
 @endsection

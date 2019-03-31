@@ -1,0 +1,30 @@
+.Page-logo {
+	display: inline-block;
+	position: relative;
+	z-index: 11;
+}
+
+.Page-content {
+	max-width: map-get($widths, md);
+	margin: $space 0 0;
+	font-size: 1.125em;
+}
+
+.Page--home {
+	.Page-content {
+		text-align: center;
+		padding-top: $space * 4;
+		margin-top: 0;
+	}
+
+	.Section--intro .Page-content {
+		text-align: center;
+		max-width: none;
+	}
+
+	.Section--main {
+		.Section-inner {
+			padding: 0;
+		}
+	}
+}

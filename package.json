@@ -11,6 +11,7 @@
     "build": "npx gulp"
   },
   "dependencies": {
+    "del": "^3.0.0",
     "gulp": "^4.0.0"
   },
   "devDependencies": {

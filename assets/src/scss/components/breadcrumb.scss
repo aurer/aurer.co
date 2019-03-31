@@ -1,0 +1,26 @@
+.Breadcrumbs {
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: inherit;
+		max-width: 8em;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		transition: none;
+
+		&:after {
+			content: '/';
+			margin: 0 $space-xs;
+		}
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+
+		@include bp(md) {
+			max-width: 12em;
+		}
+	}
+}

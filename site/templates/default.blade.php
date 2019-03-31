@@ -1,5 +1,14 @@
-@extends('layout/default')
+@extends('layouts/default')
 
 @section('main')
-	@kt( $page->text()->kirbytext() )
+	@include('partials/page-content')
+	<nav class="Nav Nav--secondary">
+		<ul class="Nav-list">
+			@foreach ($page->children()->visible() as $child)
+				<li class="Nav-item">
+					<a href="{{ $child->url() }}">{{ $child->title() }}</a>
+				</li>
+			@endforeach
+		</ul>
+	</nav>
 @endsection

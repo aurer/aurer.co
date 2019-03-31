@@ -3,6 +3,7 @@ const server = require("browser-sync");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const plumber = require("gulp-plumber");
+const del = require("del");
 const fs = require("fs");
 
 const src = "./assets/src";
@@ -27,6 +28,12 @@ function js(next) {
     .pipe(uglify())
     .pipe(gulp.dest(`${dest}`))
     .pipe(server.stream());
+  next();
+}
+
+async function gfx(next) {
+  await del(`${dest}/gfx/*`);
+  gulp.src(`${src}/gfx/*`).pipe(gulp.dest(`${dest}/gfx`));
   next();
 }
 
@@ -62,15 +69,17 @@ function watch() {
   gulp.watch(`${src}/scss/*/*.scss`).on("unlink", autoComponents);
   gulp.watch(`${src}/js/**/*.js`, js);
   gulp.watch(`${src}/scss/**/*.scss`, scss);
+  gulp.watch(`${src}/gfx/**/*`, gfx);
   gulp.watch("site/templates/**/*", server.reload);
   gulp.watch("content/**/*", server.reload);
 }
 
 function compile(next) {
-  gulp.parallel(scss, js);
+  gulp.parallel(scss, js, gfx);
   next();
 }
 
 exports.default = gulp.parallel(compile);
 exports.start = gulp.parallel(compile, serve);
 exports.watch = watch;
+exports.gfx = gfx;
