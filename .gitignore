@@ -3,7 +3,6 @@ yarn-error.log
 
 /kirby
 /vendor
-/site/plugins/*
 
 /site/cache
 !/site/cache/index.html
