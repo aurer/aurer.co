@@ -1024,7 +1024,9 @@ samp {
   top: 1.5rem;
   right: 1.5rem;
   color: #d8e3e4;
-  display: none; }
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 0.2s; }
 
 .Nav--primary {
   overflow: hidden;
@@ -1033,14 +1035,14 @@ samp {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(39, 46, 53, 0.97);
+  background: rgba(0, 153, 128, 0.96);
   z-index: 10;
   overflow: hidden;
   transform-origin: bottom left;
   left: -100%;
   transform: translateX(0) skewX(-20deg);
   transform-origin: top right;
-  transition: all 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1);
   transition-delay: 0.2s; }
   .Nav--primary .Nav-list {
     height: 100%;
@@ -1081,7 +1083,8 @@ samp {
     transform: translateX(100%) skewX(0);
     transition-delay: 0s; }
     .Nav--primary.is-active .Nav-close, .Nav--primary:target .Nav-close {
-      display: block; }
+      opacity: 1;
+      transition-delay: 0.4s; }
     .Nav--primary.is-active .Nav-list a, .Nav--primary:target .Nav-list a {
       transition: all 0.8s cubic-bezier(0.7, 0, 0.2, 1);
       transform: translateX(0);
