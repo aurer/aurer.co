@@ -1,0 +1,13 @@
+title: Default Page
+preset: page
+fields:
+  heading:
+    label: Heading
+    type: text
+  text:
+    label: Text
+    type: textarea
+    size: large
+  in_footer:
+    label: Show in footer
+    type: toggle

@@ -1,6 +1,7 @@
 @extends('layouts/home')
 
 @section('main')
+	@include('partials/page-content')
 	@component('components/section', ['name' => 'resources'])
 		<div class="Items Items--resources">
 			@foreach (page('resources')->children()->visible()->limit(3) as $item)

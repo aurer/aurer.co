@@ -41,6 +41,7 @@ body {
   margin: 0;
   line-height: 1.5;
   background-color: #191f24;
+  background-image: url(/assets/build/gfx/noise.png);
   color: #d8e3e4; }
 
 article,
@@ -1032,7 +1033,7 @@ samp {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #333d47;
+  background: rgba(39, 46, 53, 0.97);
   z-index: 10;
   overflow: hidden;
   transform-origin: bottom left;
@@ -1194,15 +1195,24 @@ samp {
   position: relative;
   z-index: 11; }
 
+.Page-mast {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 9rem; }
+
 .Page-content {
   max-width: 40em;
   margin: 1.5rem 0 0;
   font-size: 1.125em; }
 
+.Page--home h1 {
+  text-align: center; }
+
 .Page--home .Page-content {
   text-align: center;
   padding-top: 6rem;
-  margin-top: 0; }
+  margin: 0 auto; }
 
 .Page--home .Section--intro .Page-content {
   text-align: center;
@@ -1221,14 +1231,6 @@ samp {
     display: table;
     content: '';
     clear: both; }
-
-.Section--header .Section-inner {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center; }
-
-.Section--h1 .Section-inner {
-  padding-top: 6rem; }
 
 .Section--main {
   border-top: 1px solid #4a5968;

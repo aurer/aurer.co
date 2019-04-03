@@ -19,15 +19,6 @@
 
 .Section--header {
 	.Section-inner {
-		display: flex;
-		flex-flow: row wrap;
-		align-items: center;
-	}
-}
-
-.Section--h1 {
-	.Section-inner {
-		padding-top: $space * 4;
 	}
 }
 
