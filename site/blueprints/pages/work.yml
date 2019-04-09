@@ -21,6 +21,9 @@ fields:
   text:
     label: Text
     type:  textarea
+  gallery:
+    label: Gallery
+    type: files
   links:
     label: Links
     type: structure

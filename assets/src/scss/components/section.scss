@@ -18,8 +18,9 @@
 }
 
 .Section--header {
-	.Section-inner {
-	}
+	background-color: $color-neutral-dark;
+	background-image: url(/assets/build/gfx/noise.png);
+	color: $color-white;
 }
 
 .Section--main {

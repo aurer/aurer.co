@@ -1,18 +1,22 @@
 // Remove border when inside `a` element in IE 8/9/10.
 img {
-  border: 0;
-  max-width: 100%;
-  height: auto;
+	border: 0;
+	max-width: 100%;
+	height: auto;
 }
 
 // Correct overflow not hidden in IE 9/10/11.
 svg:not(:root) {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 // Address margin not present in IE 8/9 and Safari.
 figure {
-  margin: 1em 40px;
+	margin: 0 0 $space;
+
+	@include bp(md) {
+		margin: 0 $space-sm $space;
+	}
 }
 
 // Correct `inline-block` display not defined in IE 8/9.
@@ -21,15 +25,15 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-  vertical-align: baseline;
+	display: inline-block;
+	vertical-align: baseline;
 }
 
 // Prevent modern browsers from displaying `audio` without controls.
 // Remove excess height in iOS 5 devices.
 audio:not([controls]) {
-  display: none;
-  height: 0;
+	display: none;
+	height: 0;
 }
 
 noscript:extend(.Message) {

@@ -1,3 +1,7 @@
+.Page {
+	height: 100vh;
+}
+
 .Page-logo {
 	display: inline-block;
 	position: relative;
@@ -11,8 +15,16 @@
 	margin-bottom: $space * 6;
 }
 
+.Page-hero {
+	margin: 0 auto $space-xl;
+	text-align: center;
+
+	img {
+		box-shadow: 0 15px 30px rgba($color-neutral-darker, 0.2);
+	}
+}
+
 .Page-content {
-	max-width: map-get($widths, md);
 	margin: $space 0 0;
 	font-size: 1.125em;
 }
@@ -37,5 +49,20 @@
 		.Section-inner {
 			padding: 0;
 		}
+	}
+}
+
+.Page--work {
+	.Section--header {
+		padding-bottom: $space-xl;
+	}
+
+	.Page-hero {
+		margin-top: -($space-xl);
+	}
+
+	.Page-content {
+		max-width: map-get($widths, md);
+		margin: $space auto $space-xl;
 	}
 }

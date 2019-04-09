@@ -1,0 +1,8 @@
+.Gallery {
+	picture {
+		img {
+			@include shadow();
+			display: block;
+		}
+	}
+}
