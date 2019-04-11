@@ -1,17 +1,10 @@
 title: Work
+preset: page
 pages: false
-files: true
-  fields:
-    alt:
-      label: Alt
-      type: text
-    caption:
-      label: Caption
-      type: text
 fields:
   title:
     label: Title
-    type:  text
+    type: text
   cover:
     label: Cover image
     type: files
@@ -20,7 +13,7 @@ fields:
     type: files
   text:
     label: Text
-    type:  textarea
+    type: textarea
   gallery:
     label: Gallery
     type: files
