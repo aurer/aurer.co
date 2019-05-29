@@ -92,9 +92,11 @@
 	}
 
 	.Section--main {
-		border: none;
-		background-color: $color-neutral-darker;
-		color: $color-white;
+		padding-top: $space-xxl;
+
+		h2 {
+			margin-bottom: $space-lg;
+		}
 	}
 
 	.Items--projects {
@@ -103,8 +105,6 @@
 
 	.Section--header {
 		height: 50vh;
-		margin-bottom: $space-xl;
-		background-color: $color-neutral;
 	}
 
 	@include bp(md, 'max') {

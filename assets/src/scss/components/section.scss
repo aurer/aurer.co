@@ -44,13 +44,12 @@
 
 .Section--footer {
 	border-top: 1px solid $color-neutral-light;
-	background-color: $color-black;
+	background-color: $color-neutral-darker;
 	color: $color-white;
 
 	.Section-inner {
 		padding-top: $space-lg;
 		padding-bottom: $space-lg;
-		font-size: 0.9em;
 		text-align: center;
 
 		a {

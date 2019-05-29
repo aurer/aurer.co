@@ -23,7 +23,6 @@
 			text-align: center;
 			background-color: $color-neutral-dark;
 			color: $color-white;
-			font-weight: bold;
 			text-decoration: none;
 			transition: background-color 0.2s, color 0.2s;
 
@@ -101,7 +100,6 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	margin-top: $space-lg;
 	margin-left: -($space-lg);
 
 	.Item {

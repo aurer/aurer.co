@@ -160,7 +160,8 @@
 			}
 
 			a {
-				font-size: 1em;
+				font-size: 1.2em;
+				font-weight: 400;
 				padding: 0;
 				padding-left: $space;
 				position: relative;
@@ -206,6 +207,10 @@
 	}
 
 	@include bp(md) {
+		&:after {
+			content: none;
+		}
+
 		.Nav-item {
 			display: inline-block;
 			margin-bottom: 0;

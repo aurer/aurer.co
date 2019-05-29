@@ -40,7 +40,8 @@ body {
   margin: 0;
   line-height: 1.5;
   background-color: #111418;
-  color: #ecf2f2; }
+  color: #ecf2f2;
+  letter-spacing: 0.05em; }
 
 article,
 aside,
@@ -931,7 +932,6 @@ samp {
       text-align: center;
       background-color: #151a1e;
       color: #ecf2f2;
-      font-weight: bold;
       text-decoration: none;
       transition: background-color 0.2s, color 0.2s; }
       .Items .Item .Item-link:hover, .Items .Item .Item-link:focus {
@@ -985,7 +985,6 @@ samp {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin-top: 3rem;
   margin-left: -3rem; }
   .Items--networks .Item {
     padding-left: 3rem;
@@ -1188,7 +1187,8 @@ samp {
           display: inline-block;
           transition: none; }
         .Nav--primary .Nav-list a {
-          font-size: 1em;
+          font-size: 1.2em;
+          font-weight: 400;
           padding: 0;
           padding-left: 1.5rem;
           position: relative;
@@ -1217,6 +1217,8 @@ samp {
     color: #ecf2f2; }
 
 @media (min-width: 40rem) {
+  .Nav--footer:after {
+    content: none; }
   .Nav--footer .Nav-item {
     display: inline-block;
     margin-bottom: 0;
@@ -1305,17 +1307,15 @@ samp {
   text-align: center; }
 
 .Page--home .Section--main {
-  border: none;
-  background-color: #111418;
-  color: #ecf2f2; }
+  padding-top: 9rem; }
+  .Page--home .Section--main h2 {
+    margin-bottom: 3rem; }
 
 .Page--home .Items--projects {
   margin-bottom: 9rem; }
 
 .Page--home .Section--header {
-  height: 50vh;
-  margin-bottom: 6rem;
-  background-color: #272e35; }
+  height: 50vh; }
 
 @media (max-width: 40rem) {
   .Page--home .Nav-open {
@@ -1391,12 +1391,11 @@ samp {
 
 .Section--footer {
   border-top: 1px solid #333d47;
-  background-color: #0c0d0e;
+  background-color: #111418;
   color: #ecf2f2; }
   .Section--footer .Section-inner {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    font-size: 0.9em;
     text-align: center; }
     .Section--footer .Section-inner a {
       color: inherit; }
