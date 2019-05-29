@@ -30,18 +30,7 @@
 
 .Nav-open {
 	z-index: 0;
-	transition-property: background, transform, border-color;
-	transition-duration: 0.5s;
-	transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
-
-	&.is-dynamic {
-		z-index: 11;
-	}
-
-	&.is-active {
-		transform: rotate(-45deg);
-		border-color: transparent;
-	}
+	color: $color-white;
 }
 
 .Nav-close {
