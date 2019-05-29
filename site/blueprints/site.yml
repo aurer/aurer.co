@@ -1,3 +1,58 @@
+name: Site
 title: Site
-preset: pages
-unlisted: true
+
+columns:
+  left:
+    width: 1/2
+    sections:
+      pages:
+        headline: Listed Pages
+        type: pages
+        status: listed
+      unlisted:
+        headline: Unlisted Pages
+        type: pages
+        status: unlisted
+
+  right:
+    width: 1/2
+    sections:
+      settings:
+        headline: Options
+        type: fields
+        fields:
+          title:
+            label: Title
+            type: text
+          author:
+            label: Author
+            type: text
+          keywords:
+            label: Keywords
+            type: text
+          description:
+            label: Description
+            type: text
+          copyright:
+            label: Copyright
+            type: text
+          email:
+            label: Email
+            type: text
+          networks:
+            label: Networks
+            type: structure
+            fields:
+              network:
+                label: Network
+                type: select
+                options:
+                  github: Github
+                  codepen: Codepen
+                  linkedin: Linkedin
+                  twitter: Twitter
+                  instagram: Instagram
+              url:
+                title: URL
+                type: url
+                required: true
