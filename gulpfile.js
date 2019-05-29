@@ -3,6 +3,7 @@ const server = require('browser-sync');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
 const del = require('del');
 const fs = require('fs');
 
@@ -33,7 +34,10 @@ function js(next) {
 
 async function gfx(next) {
 	await del(`${dest}/gfx/*`);
-	await gulp.src(`${src}/gfx/**/*`).pipe(gulp.dest(`${dest}/gfx`));
+	await gulp
+		.src(`${src}/gfx/**/*`)
+		.pipe(imagemin())
+		.pipe(gulp.dest(`${dest}/gfx`));
 	next();
 }
 
