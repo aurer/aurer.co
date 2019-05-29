@@ -44,6 +44,8 @@
 
 .Section--footer {
 	border-top: 1px solid $color-neutral-light;
+	background-color: $color-black;
+	color: $color-white;
 
 	.Section-inner {
 		padding-top: $space-lg;

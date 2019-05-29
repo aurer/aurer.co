@@ -6,3 +6,4 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>{{ $site->title() }}</title>
 @css('assets/build/main.css')
+@css('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap')
