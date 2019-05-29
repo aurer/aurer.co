@@ -1,6 +1,6 @@
 .Items {
 	display: grid;
-	grid-gap: $space;
+	grid-gap: $space-lg;
 
 	@include bp(md) {
 		grid-template-columns: repeat(2, 1fr);
@@ -12,6 +12,8 @@
 
 	.Item {
 		display: flex;
+		border-radius: 4px;
+		overflow: hidden;
 
 		.Item-link {
 			@extend %h4;
@@ -34,30 +36,127 @@
 }
 
 .Items--work {
+	margin-bottom: $space;
+
+	@include bp(lg) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
 	.Item {
+		background-color: $color-primary;
+		position: relative;
+		@include shadow-sm();
+
 		.Item-link {
 			font-size: 1rem;
 			display: flex;
 			flex-direction: column;
 			padding: 0;
-			background-color: transparent;
-			color: $color-neutral-darker;
+			color: $color-white;
+			background-color: $color-primary;
+			box-shadow: 0 10px 30px rgba($color-neutral-darker, 0.3);
+			background-size: cover;
 
 			img {
-				box-shadow: 0 15px 30px rgba($color-neutral-darker, 0.2);
+				transition: all 0.2s;
+				display: block;
 			}
 
 			h2 {
-				@extend %h4;
+				@extend %h5;
 				color: inherit;
 				text-align: left;
 				margin: $space 0;
+				padding: $space;
+				text-align: center;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				opacity: 0;
+				transition: all 0.2s ease-out;
 			}
 
 			&:hover,
 			&:focus {
 				background-color: transparent;
-				color: $color-primary;
+				color: $color-white;
+
+				img {
+					opacity: 0.15;
+					filter: grayscale(1);
+					transform: scale(1.05);
+				}
+
+				h2 {
+					transform: translateY(-30%);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.Items--networks {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin-top: $space-lg;
+	margin-left: -($space-lg);
+
+	.Item {
+		padding-left: $space-lg;
+		padding-bottom: $space-lg;
+		width: 50%;
+
+		@include bp(md, 'max') {
+			img {
+				width: 40px;
+			}
+		}
+
+		@include bp(lg) {
+			width: 33.33%;
+		}
+
+		.Item-link {
+			border-radius: 4px;
+			background-color: transparent;
+			border: 1px solid transparent;
+			transition: all 0.4s $transition-1;
+			padding-top: $space;
+			padding-bottom: $space;
+
+			@include bp(md) {
+				padding-top: $space-lg;
+				padding-bottom: $space-lg;
+			}
+
+			span {
+				display: block;
+				margin-top: $space;
+				font-size: 0.9em;
+				@include transition(0.4s);
+
+				@include bp(md) {
+					opacity: 0;
+					transform: translateY(-50%);
+				}
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-white;
+				background-color: rgba($color-white, 0.05);
+
+				span {
+					opacity: 1;
+					transform: translateY(50%);
+
+					@include bp(md) {
+						transform: translateY(0);
+					}
+				}
 			}
 		}
 	}

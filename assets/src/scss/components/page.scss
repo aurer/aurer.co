@@ -12,7 +12,8 @@
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	margin-bottom: $space * 6;
+	margin-bottom: $space;
+	margin-bottom: 20vh;
 }
 
 .Page-hero {
@@ -29,25 +30,111 @@
 	font-size: 1.125em;
 }
 
+/*
+	
+	Homepage animations
+
+*/
+
+@keyframes logoFadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes logo {
+	from {
+		transform: translate(calc(50vw - #{$space}));
+	}
+
+	to {
+		transform: translate(0);
+	}
+}
+
+@keyframes logoImg {
+	from {
+		transform: translate(-50%);
+	}
+
+	to {
+		transform: translate(0);
+	}
+}
+
+@keyframes navopen {
+	from {
+		transform: translate(calc(-50vw + #{$space}));
+		opacity: 0;
+	}
+
+	to {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+
+/*
+	
+	Homepage
+
+*/
+
 .Page--home {
-	h1 {
+	h1,
+	h2,
+	h3 {
 		text-align: center;
-	}
-
-	.Page-content {
-		text-align: center;
-		padding-top: $space * 4;
-		margin: 0 auto;
-	}
-
-	.Section--intro .Page-content {
-		text-align: center;
-		max-width: none;
 	}
 
 	.Section--main {
-		.Section-inner {
-			padding: 0;
+		border: none;
+		background-color: transparent;
+		color: $color-white;
+	}
+
+	.Items--projects {
+		margin-bottom: $space-xxl;
+	}
+
+	.Section--header {
+		height: 50vh;
+		margin-bottom: $space-xl;
+		background-color: $color-neutral;
+	}
+
+	@include bp(md, 'max') {
+		.Nav-open {
+			animation: navopen 1s;
+			animation-delay: 1s;
+			animation-fill-mode: backwards;
+		}
+
+		.Page-logo {
+			animation: logoFadein 1s, logo 1s;
+			animation-delay: 0s, 1s;
+			animation-fill-mode: backwards, backwards;
+
+			img {
+				animation: logoImg 1s;
+				animation-delay: 1s;
+				animation-fill-mode: backwards;
+			}
+		}
+	}
+
+	@include bp(md) {
+		.Items {
+			margin-top: $space-xl;
+			margin-bottom: $space-xxl;
+		}
+
+		.Items--projects {
+			margin-bottom: $space-xxl * 2;
 		}
 	}
 }
@@ -63,6 +150,24 @@
 
 	.Page-content {
 		max-width: map-get($widths, md);
-		margin: $space auto $space-xl;
+		margin: $space-lg auto $space-xl;
+	}
+
+	@include bp(lg) {
+		.Page-hero {
+			width: 50%;
+			float: left;
+		}
+
+		.Page-content {
+			width: 50%;
+			float: right;
+			max-width: none;
+			padding-left: $space-xl;
+		}
+
+		.Gallery {
+			clear: both;
+		}
 	}
 }

@@ -17,12 +17,6 @@
 	}
 }
 
-.Section--header {
-	background-color: $color-neutral-dark;
-	background-image: url(/assets/build/gfx/noise.png);
-	color: $color-white;
-}
-
 .Section--main {
 	border-top: 1px solid $color-neutral-lighter;
 	border-bottom: 1px solid $color-neutral-lighter;
@@ -49,8 +43,25 @@
 }
 
 .Section--footer {
+	border-top: 1px solid $color-neutral-light;
+
 	.Section-inner {
-		display: flex;
-		justify-content: space-between;
+		padding-top: $space-lg;
+		padding-bottom: $space-lg;
+		font-size: 0.9em;
+		text-align: center;
+
+		a {
+			color: inherit;
+		}
+	}
+
+	@include bp(md) {
+		border: none;
+
+		.Section-inner {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 }

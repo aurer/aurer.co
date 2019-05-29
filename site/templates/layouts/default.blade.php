@@ -7,11 +7,9 @@
 	<div class="Page Page--default Page--{{ $page->template() }}">
 		@include('partials/mast')
 				
-		@yield('before-main')
 		@component('components/section', ['type' => 'main', 'name' => 'main'])
 			@yield('main')
 		@endcomponent
-		@yield('after-main')
 
 		@include('partials/footer')
 	</div>
