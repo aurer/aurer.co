@@ -7,7 +7,7 @@ fields:
   text:
     label: Text
     type: textarea
-    size: large
+    size: small
   in_footer:
     label: Show in footer
     type: toggle
