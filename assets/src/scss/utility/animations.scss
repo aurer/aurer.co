@@ -1,0 +1,9 @@
+@keyframes navColorShift {
+	from {
+		background-color: $color-primary;
+	}
+
+	to {
+		background-color: adjust-hue($color-primary, -10deg);
+	}
+}

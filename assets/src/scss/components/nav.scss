@@ -177,7 +177,9 @@
 						position: relative;
 						left: auto;
 						bottom: -0.3rem;
-						border-bottom: 3px solid $color-primary;
+						height: 3px;
+						background-color: $color-primary;
+						animation: navColorShift 5s alternate-reverse infinite;
 					}
 				}
 			}

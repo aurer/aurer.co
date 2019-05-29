@@ -1,13 +1,13 @@
 // Remove the gray background color from active links in IE 10.
 a {
 	background-color: transparent;
-	color: inherit;
+	color: $color-white;
 	transition: all 0.2s;
 
 	// Improve readability when focused and also mouse hovered in all browsers.
 	&:active,
 	&:hover {
 		outline: 0;
-		color: $color-white;
+		color: $color-primary-light;
 	}
 }

@@ -1,3 +1,9 @@
+@keyframes navColorShift {
+  from {
+    background-color: #5200dc; }
+  to {
+    background-color: #2d00dc; } }
+
 .hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -124,7 +130,7 @@ select {
   input[type='number']:focus,
   textarea:focus,
   select:focus {
-    border: 1px solid #00997f;
+    border: 1px solid #5200dc;
     outline: 0; }
 
 textarea {
@@ -161,11 +167,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 a {
   background-color: transparent;
-  color: inherit;
+  color: #ecf2f2;
   transition: all 0.2s; }
   a:active, a:hover {
     outline: 0;
-    color: #ecf2f2; }
+    color: #6e2de1; }
 
 ul, ol, dl {
   margin-top: 0;
@@ -376,8 +382,8 @@ samp {
   letter-spacing: 0.05rem;
   font-weight: bold;
   background-color: transparent;
-  color: #00997f;
-  border: 1px solid #00997f;
+  color: #5200dc;
+  border: 1px solid #5200dc;
   outline: none;
   cursor: pointer;
   transition: all 0.2s; }
@@ -401,18 +407,18 @@ samp {
     background-color: #4a5968; }
 
 .Button--primary {
-  background-color: #00997f;
-  border-color: #00997f;
+  background-color: #5200dc;
+  border-color: #5200dc;
   color: #0c0d0e; }
   .Button--primary:hover, .Button--primary:focus {
-    background-color: #2da995; }
+    background-color: #6e2de1; }
 
 .Button--secondary {
-  background-color: #00997f;
-  border-color: #00997f;
+  background-color: #5200dc;
+  border-color: #5200dc;
   color: #0c0d0e; }
   .Button--secondary:hover, .Button--secondary:focus {
-    background-color: #2da995; }
+    background-color: #6e2de1; }
 
 .Button--neutral {
   background-color: #272e35;
@@ -458,7 +464,7 @@ samp {
   .Form-inputs input[type='time']:focus,
   .Form-inputs input[type='number']:focus,
   .Form-inputs textarea:focus {
-    border-color: #00997f;
+    border-color: #5200dc;
     outline: 0; }
 
 .Form-inputs select {
@@ -943,7 +949,7 @@ samp {
     .Items--work {
       grid-template-columns: repeat(2, 1fr); } }
   .Items--work .Item {
-    background-color: #00997f;
+    background-color: #5200dc;
     position: relative;
     box-shadow: 0 10px 20px rgba(17, 20, 24, 0.2); }
     .Items--work .Item .Item-link {
@@ -952,7 +958,7 @@ samp {
       flex-direction: column;
       padding: 0;
       color: #ecf2f2;
-      background-color: #00997f;
+      background-color: #5200dc;
       box-shadow: 0 10px 30px rgba(17, 20, 24, 0.3);
       background-size: cover; }
       .Items--work .Item .Item-link img {
@@ -1109,7 +1115,7 @@ samp {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00997f;
+  background: #5200dc;
   z-index: 10;
   overflow: hidden;
   transform-origin: bottom left;
@@ -1140,7 +1146,7 @@ samp {
         content: '';
         display: inline-block;
         position: absolute;
-        border-left: 4px solid #00997f;
+        border-left: 4px solid #5200dc;
         height: 100%;
         left: -1.5rem; }
       @media (min-width: 40rem) {
@@ -1200,7 +1206,9 @@ samp {
               position: relative;
               left: auto;
               bottom: -0.3rem;
-              border-bottom: 3px solid #00997f; } }
+              height: 3px;
+              background-color: #5200dc;
+              animation: navColorShift 5s alternate-reverse infinite; } }
 
 .Nav--footer:after {
   display: block;
@@ -1391,14 +1399,11 @@ samp {
 
 .Section--footer {
   border-top: 1px solid #333d47;
-  background-color: #111418;
-  color: #ecf2f2; }
+  background-color: #111418; }
   .Section--footer .Section-inner {
     padding-top: 3rem;
     padding-bottom: 3rem;
     text-align: center; }
-    .Section--footer .Section-inner a {
-      color: inherit; }
   @media (min-width: 40rem) {
     .Section--footer {
       border: none; }
