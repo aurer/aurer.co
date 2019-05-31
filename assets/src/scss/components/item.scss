@@ -28,7 +28,7 @@
 
 			&:hover,
 			&:focus {
-				background-color: $color-neutral-light;
+				background-color: $color-primary;
 			}
 		}
 	}
@@ -106,6 +106,7 @@
 		padding-left: $space-lg;
 		padding-bottom: $space-lg;
 		width: 50%;
+		overflow: visible;
 
 		@include bp(md, 'max') {
 			img {
@@ -119,12 +120,32 @@
 
 		.Item-link {
 			border-radius: 4px;
-			background-color: $color-neutral-darker;
-			color: $color-white;
+			background-color: $color-white;
+			color: $color-neutral-darker;
 			border: 1px solid transparent;
-			transition: all 0.4s $transition-1;
+			transition: transform 0.4s $transition-1;
 			padding-top: $space;
 			padding-bottom: $space;
+			position: relative;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				border-radius: 50%;
+				box-shadow: 0 0 0 60px $color-neutral-darker;
+				position: absolute;
+				left: 50%;
+				top: calc(#{$space-lg} + 30px);
+				transition: box-shadow .5s $transition-1, top .4s $transition-1;
+			}
+
+			img {
+				position: relative;
+				z-index: 2;
+			}
 
 			@include bp(md) {
 				padding-top: $space-lg;
@@ -146,7 +167,13 @@
 			&:hover,
 			&:focus {
 				border-color: $color-white;
-				background-color: rgba($color-white, 0.05);
+				background-color: $color-white;
+				color: $color-white;
+
+				&:before {
+					top: 50%;
+					box-shadow: 0 0 0 150px $color-primary;
+				}
 
 				span {
 					opacity: 1;

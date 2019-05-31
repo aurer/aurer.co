@@ -941,7 +941,7 @@ samp {
       text-decoration: none;
       transition: background-color 0.2s, color 0.2s; }
       .Items .Item .Item-link:hover, .Items .Item .Item-link:focus {
-        background-color: #333d47; }
+        background-color: #5200dc; }
 
 .Items--work {
   margin-bottom: 1.5rem; }
@@ -995,7 +995,8 @@ samp {
   .Items--networks .Item {
     padding-left: 3rem;
     padding-bottom: 3rem;
-    width: 50%; }
+    width: 50%;
+    overflow: visible; }
     @media (max-width: 40rem) {
       .Items--networks .Item img {
         width: 40px; } }
@@ -1004,12 +1005,28 @@ samp {
         width: 33.33%; } }
     .Items--networks .Item .Item-link {
       border-radius: 4px;
-      background-color: #111418;
-      color: #ecf2f2;
+      background-color: #ecf2f2;
+      color: #111418;
       border: 1px solid transparent;
-      transition: all 0.4s cubic-bezier(0.2, 0.01, 0.01, 0.99);
+      transition: transform 0.4s cubic-bezier(0.2, 0.01, 0.01, 0.99);
       padding-top: 1.5rem;
-      padding-bottom: 1.5rem; }
+      padding-bottom: 1.5rem;
+      position: relative; }
+      .Items--networks .Item .Item-link:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 60px #111418;
+        position: absolute;
+        left: 50%;
+        top: calc(3rem + 30px);
+        transition: box-shadow 0.5s cubic-bezier(0.2, 0.01, 0.01, 0.99), top 0.4s cubic-bezier(0.2, 0.01, 0.01, 0.99); }
+      .Items--networks .Item .Item-link img {
+        position: relative;
+        z-index: 2; }
       @media (min-width: 40rem) {
         .Items--networks .Item .Item-link {
           padding-top: 3rem;
@@ -1026,7 +1043,11 @@ samp {
             transform: translateY(-50%); } }
       .Items--networks .Item .Item-link:hover, .Items--networks .Item .Item-link:focus {
         border-color: #ecf2f2;
-        background-color: rgba(236, 242, 242, 0.05); }
+        background-color: #ecf2f2;
+        color: #ecf2f2; }
+        .Items--networks .Item .Item-link:hover:before, .Items--networks .Item .Item-link:focus:before {
+          top: 50%;
+          box-shadow: 0 0 0 150px #5200dc; }
         .Items--networks .Item .Item-link:hover span, .Items--networks .Item .Item-link:focus span {
           opacity: 1;
           transform: translateY(50%); }
@@ -1207,8 +1228,7 @@ samp {
               left: auto;
               bottom: -0.3rem;
               height: 3px;
-              background-color: #5200dc;
-              animation: navColorShift 5s alternate-reverse infinite; } }
+              background-color: #5200dc; } }
 
 .Nav--footer:after {
   display: block;
