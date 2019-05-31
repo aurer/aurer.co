@@ -61,7 +61,7 @@ function autoComponents() {
 // Setup local server with injection
 function serve() {
 	server.init({
-		proxy: 'aurer.test',
+		proxy: 'localhost',
 		notify: false
 	});
 
