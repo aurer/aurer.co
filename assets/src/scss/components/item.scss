@@ -16,20 +16,76 @@
 		overflow: hidden;
 
 		.Item-link {
-			@extend %h4;
 			flex: 1;
 			display: block;
-			padding: $space-lg $space-sm;
-			text-align: center;
+			padding: $space-lg;
 			background-color: $color-neutral-dark;
 			color: $color-white;
 			text-decoration: none;
 			transition: background-color 0.2s, color 0.2s;
+			text-align: center;
+			border-radius: 4px;
 
 			&:hover,
 			&:focus {
 				background-color: $color-primary;
 			}
+		}
+
+		.Item-title {
+			@extend %h4;
+		}
+	}
+}
+
+.Items--projects {
+	.Item {
+		.Item-title,
+		.Item-link {
+			text-align: left;
+		}
+
+		.Item-link {
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				background-color: $color-primary;
+				z-index: 0;
+				transform: translateX(-100%) skewX(-20deg);
+				transform-origin: top right;
+				transition: transform 0.5s $transition-1;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $color-neutral-darker;
+
+				.Item-title {
+					transform: scale(1.2);
+				}
+
+				.Item-summary {
+					transform: translateY(0.5em);
+				}
+
+				&:before {
+					transform: translateX(0) skewX(0);
+				}
+			}
+		}
+
+		.Item-title,
+		.Item-summary {
+			position: relative;
+			transform-origin: 0 0;
+			transition: transform 0.5s $transition-1;
+			z-index: 1;
 		}
 	}
 }
@@ -100,87 +156,98 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	margin-left: -($space-lg);
+	margin-left: -($space);
 
 	.Item {
-		padding-left: $space-lg;
-		padding-bottom: $space-lg;
+		padding-left: $space;
+		padding-bottom: $space;
 		width: 50%;
 		overflow: visible;
 
-		@include bp(md, 'max') {
-			img {
-				width: 40px;
-			}
-		}
-
-		@include bp(lg) {
-			width: 33.33%;
-		}
-
 		.Item-link {
-			border-radius: 4px;
-			background-color: $color-white;
-			color: $color-neutral-darker;
-			border: 1px solid transparent;
-			transition: transform 0.4s $transition-1;
-			padding-top: $space;
-			padding-bottom: $space;
-			position: relative;
-
-			&:before {
-				content: '';
-				display: block;
-				position: absolute;
-				width: 1px;
-				height: 1px;
-				border-radius: 50%;
-				box-shadow: 0 0 0 60px $color-neutral-darker;
-				position: absolute;
-				left: 50%;
-				top: calc(#{$space-lg} + 30px);
-				transition: box-shadow .5s $transition-1, top .4s $transition-1;
-			}
+			padding: $space;
 
 			img {
-				position: relative;
-				z-index: 2;
-			}
-
-			@include bp(md) {
-				padding-top: $space-lg;
-				padding-bottom: $space-lg;
+				margin-bottom: $space;
 			}
 
 			span {
 				display: block;
-				margin-top: $space;
-				font-size: 0.9em;
-				@include transition(0.4s);
-
-				@include bp(md) {
-					opacity: 0;
-					transform: translateY(-50%);
-				}
 			}
+		}
+	}
 
-			&:hover,
-			&:focus {
-				border-color: $color-white;
-				background-color: $color-white;
-				color: $color-white;
+	@include bp(lg) {
+		margin-left: -($space-lg);
+
+		.Item {
+			width: 33.33%;
+			padding-left: $space-lg;
+			padding-bottom: $space-lg;
+		}
+
+		.Item-link {
+			max-width: 10rem;
+			margin: auto;
+		}
+	}
+
+	@supports (box-shadow: 0 0) {
+		.Item {
+			.Item-link {
+				background-color: transparent;
+				position: relative;
 
 				&:before {
-					top: 50%;
-					box-shadow: 0 0 0 150px $color-primary;
+					content: '';
+					display: block;
+					position: absolute;
+					width: 1px;
+					height: 1px;
+					border-radius: 50%;
+					background-color: $color-neutral-darker;
+					box-shadow: 0 0 0 60px $color-neutral-darker;
+					position: absolute;
+					left: 50%;
+					top: calc(#{$space} + 30px);
+					transition: box-shadow 0.5s $transition-1, top 0.4s $transition-1;
+				}
+
+				img,
+				span {
+					position: relative;
+					z-index: 2;
+					@include transition(0.4s);
 				}
 
 				span {
-					opacity: 1;
-					transform: translateY(50%);
+					opacity: 0;
+					transform: translateY(-100%);
+				}
 
-					@include bp(md) {
+				&:hover,
+				&:focus {
+					background-color: transparent;
+
+					&:before {
+						top: 50%;
+						box-shadow: 0 0 0 100px $color-primary;
+
+						@include bp(lg) {
+							box-shadow: 0 0 0 130px $color-primary;
+						}
+					}
+
+					span {
+						opacity: 1;
 						transform: translateY(0);
+						transition-delay: 0.1s;
+					}
+
+					img {
+						@include bp(lg) {
+							transform: scale(1.2);
+						}
 					}
 				}
 			}

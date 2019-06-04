@@ -5,7 +5,10 @@
 	<div class="Items Items--projects">
 		@foreach (page('projects')->children()->visible()->limit(3) as $item)
 			<div class="Item">
-				<a class="Item-link" href="{{ $item->url() }}">{{ $item->title() }}</a>
+				<a class="Item-link" href="{{ $item->url() }}">
+					<h2 class="Item-title">{{ $item->title() }}</h2>
+					<p class="Item-summary">{{ $item->summary() }}</p>
+				</a>
 			</div>
 		@endforeach
 	</div>

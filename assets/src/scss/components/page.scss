@@ -94,7 +94,7 @@
 	.Section--main {
 		padding-top: $space-xxl;
 
-		h2 {
+		.Section-inner > h2 {
 			margin-bottom: $space-lg;
 		}
 	}
