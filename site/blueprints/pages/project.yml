@@ -1,0 +1,15 @@
+title: Project
+preset: page
+pages: false
+
+fields:
+  title:
+    label: Title
+    type: text
+  summary:
+    label: Summary
+    type: text
+  text:
+    label: Text
+    type: textarea
+    size: large
