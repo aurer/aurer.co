@@ -4,7 +4,7 @@
 	@include('partials/head')
 </head>
 <body>
-	<div class="Page Page--default Page--{{ $page->template() }}">
+	<div class="Page Page--default Page--{{ $page->template() }}" id="Page">
 		@include('partials/mast')
 				
 		@component('components/section', ['type' => 'main', 'name' => 'main'])
