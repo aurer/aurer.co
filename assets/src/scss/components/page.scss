@@ -21,13 +21,18 @@
 	text-align: center;
 
 	img {
-		box-shadow: 0 15px 30px rgba($color-neutral-darker, 0.2);
+		@include shadow-lg();
 	}
 }
 
 .Page-content {
 	margin: $space 0 0;
-	font-size: 1.125em;
+	max-width: map-get($widths, lg);
+
+	&:empty {
+		display: none;
+		margin: 0;
+	}
 }
 
 /*
@@ -92,7 +97,7 @@
 	}
 
 	.Section--main {
-		padding-top: $space-xxl;
+		padding-top: $space-xl;
 
 		.Section-inner > h2 {
 			margin-bottom: $space-lg;
@@ -100,11 +105,11 @@
 	}
 
 	.Items--projects {
-		margin-bottom: $space-xxl;
+		margin-bottom: $space-xl;
 	}
 
 	.Section--header {
-		height: 50vh;
+		min-height: 50vh;
 	}
 
 	@include bp(md, 'max') {
@@ -130,14 +135,20 @@
 	@include bp(md) {
 		.Items {
 			margin-top: $space-xl;
-			margin-bottom: $space-xxl;
+			margin-bottom: $space-xl;
 		}
 
 		.Items--projects {
-			margin-bottom: $space-xxl * 2;
+			margin-bottom: $space-xl * 2;
 		}
 	}
 }
+
+/*
+
+	Work
+
+*/
 
 .Page--work {
 	.Section--header {
@@ -145,12 +156,12 @@
 	}
 
 	.Page-hero {
-		margin-top: -($space-xl);
+		margin-top: -($space-xxl);
 	}
 
 	.Page-content {
 		max-width: map-get($widths, md);
-		margin: $space-lg auto $space-xl;
+		margin: 0 auto $space-xl;
 	}
 
 	@include bp(lg) {

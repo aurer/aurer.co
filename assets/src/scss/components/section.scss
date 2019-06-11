@@ -22,6 +22,11 @@
 	border-bottom: 1px solid $color-neutral-lighter;
 	background-color: $color-white;
 	color: $color-neutral;
+
+	.Section-inner {
+		padding-top: $space-xl;
+		padding-bottom: $space-xl;
+	}
 }
 
 .Section--projects {

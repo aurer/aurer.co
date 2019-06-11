@@ -67,11 +67,15 @@
 }
 
 @mixin shadow() {
-	box-shadow: 0 15px 30px rgba($color-neutral-darker, 0.2);
+	box-shadow: 0 15px 30px rgba($color-neutral-darker, 0.2), 0 2px 10px rgba($color-neutral-darker, 0.05);
 }
 
 @mixin shadow-sm() {
-	box-shadow: 0 10px 20px rgba($color-neutral-darker, 0.2);
+	box-shadow: 0 10px 20px rgba($color-neutral-darker, 0.2), 0 2px 8px rgba($color-neutral-darker, 0.05);
+}
+
+@mixin shadow-lg {
+	box-shadow: 0 15px 40px rgba($color-neutral-darker, 0.2), 0 2px 10px rgba($color-neutral-darker, 0.05);
 }
 
 @mixin easeOut() {

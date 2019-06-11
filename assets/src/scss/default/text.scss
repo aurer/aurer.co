@@ -43,57 +43,19 @@ h4,
 	line-height: 1;
 }
 
-// Minor 3rd type scale (http://type-scale.com/)
-h1,
-%h1 {
-	font-size: 2.488em;
-}
+// Heading sizes
+$x: 1;
+@for $i from 1 through 6 {
+	$h: 7 - $i;
+	h#{$h},
+	.h#{$h} {
+		font-size: #{$x}em;
 
-h2,
-%h2 {
-	font-size: 2.074em;
-}
+		@include bp(sm, 'max') {
+			font-size: #{$x - 0.6}em;
+		}
 
-h3,
-%h3 {
-	font-size: 1.728em;
-}
-
-h4,
-%h4 {
-	font-size: 1.44em;
-}
-
-h5,
-%h5 {
-	font-size: 1.2em;
-}
-
-@include bp(md) {
-	// Perfect 4th type scale (http://type-scale.com/)
-	h1,
-	%h1 {
-		font-size: 4.209em;
-	}
-
-	h2,
-	%h2 {
-		font-size: 2.441em;
-	}
-
-	h3,
-	%h3 {
-		font-size: 1.953em;
-	}
-
-	h4,
-	%h4 {
-		font-size: 1.563em;
-	}
-
-	h5,
-	%h5 {
-		font-size: 1.25em;
+		$x: $x * 1.29;
 	}
 }
 
