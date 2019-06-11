@@ -15,7 +15,7 @@ function scss(next) {
 	gulp
 		.src([`${src}/scss/main.scss`])
 		.pipe(plumber())
-		.pipe(sass())
+		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
 		.pipe(gulp.dest(`${dest}`))
 		.pipe(server.stream());
 	next();
