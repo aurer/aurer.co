@@ -17,6 +17,26 @@
 	}
 }
 
+.Section--header {
+	position: sticky;
+	top: -$space-sm;
+	z-index: 100;
+	background-color: rgba($color-neutral-darker, 0.9);
+
+	@include bp(md) {
+		backdrop-filter: blur(8px) saturate(0.8);
+	}
+
+	.Section-inner {
+		padding-bottom: $space-sm;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		margin-bottom: $space;
+		margin-bottom: 18vh;
+	}
+}
+
 .Section--main {
 	border-top: 1px solid $color-neutral-lighter;
 	border-bottom: 1px solid $color-neutral-lighter;

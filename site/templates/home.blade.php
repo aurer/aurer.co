@@ -1,5 +1,10 @@
 @extends('layouts/home')
 
+@section('mast')
+	<h1>{{ $page->heading() }}</h1>
+	@kt( $page->text()->kirbytext() )
+@endsection
+
 @section('main')
 	<h2>Projects</h2>
 	<div class="Items Items--projects">

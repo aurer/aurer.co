@@ -5,6 +5,7 @@
 </head>
 <body>
 	<div class="Page Page--home" id="page">
+		@include('partials/header')
 		@include('partials/mast')
 		
 		@component('components/section', ['type' => 'main', 'name' => 'main'])
